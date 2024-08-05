@@ -1,0 +1,24 @@
+#quadrinhos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    width: 600px;
+}
+
+#quadroPortugues {
+}
+
+#quadroIngles {
+
+}
+
+.quadrinhosJS {
+    background-color: rgb(86, 122, 170);
+    width: 250px;
+    height: 70px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
