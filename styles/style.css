@@ -1,24 +1,37 @@
+body{
+    background-color: rgb(92, 92, 92);
+}
+
+header{
+    text-align: center;
+}
+
 #quadrinhos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
-    width: 600px;
+    width: 1250px;
 }
 
 #quadroPortugues {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 #quadroIngles {
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .quadrinhosJS {
     background-color: rgb(86, 122, 170);
-    width: 250px;
+    width: 270px;
     height: 70px;
-    margin: auto;
+    margin: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
     display: flex;
+    border-radius: 100px;
+    box-shadow: 5px 5px 3px rgb(2, 39, 10);
 }

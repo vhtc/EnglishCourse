@@ -46,8 +46,8 @@ let palavras = [
     },
     {
         id: 9,
-        english: "Each",
-        portuguese: "Cada"
+        english: "Tea",
+        portuguese: "Chá"
     },
     {
         id: 10,
@@ -274,7 +274,7 @@ function executar() {
         pt.innerHTML += `
         <div id="${palavra.portuguese}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosJS">
             ${palavra.portuguese}
-        </div> </br>`
+        </div>`
     })
 
     palavras.sort((a, b) => a.english.localeCompare(b.english))
@@ -283,7 +283,7 @@ function executar() {
         en.innerHTML += `
         <div id="${palavra.english}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosJS">
             ${palavra.english}
-        </div> </br>`
+        </div>`
     })
 
 }
@@ -322,7 +322,6 @@ function teste(x, y) {
         console.log(vitoria2)
 
         vitoria1.style.display = "none"
-        vitoria2.style.visibility = "hidden"
         vitoria2.style.display = "none"
 
 
