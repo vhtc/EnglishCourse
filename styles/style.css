@@ -34,7 +34,7 @@ header{
     justify-content: center;
     display: flex;
     border-radius: 100px;
-    box-shadow: 5px 5px 3px rgb(2, 39, 10);
+    box-shadow: 5px 5px 3px rgb(158, 188, 228);
 }
 
 .quadrinhosInglesJS {
@@ -47,5 +47,5 @@ header{
     justify-content: center;
     display: flex;
     border-radius: 100px;
-    box-shadow: 5px 5px 3px rgb(2, 39, 10);
+    box-shadow: 5px 5px 3px rgb(86, 122, 170);
 }
