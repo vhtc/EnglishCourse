@@ -117,7 +117,7 @@ function executar() {
     let pt = document.getElementById("quadroPortugues")
     palavras.forEach(palavra => {
         pt.innerHTML += `
-        <div id="${palavra.portuguese}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosJS">
+        <div id="${palavra.portuguese}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosPortuguesJS">
             ${palavra.portuguese}
         </div>`
     })
@@ -126,7 +126,7 @@ function executar() {
     let en = document.getElementById("quadroIngles")
     palavras.forEach(palavra => {
         en.innerHTML += `
-        <div id="${palavra.english}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosJS">
+        <div id="${palavra.english}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosInglesJS">
             ${palavra.english}
         </div>`
     })

@@ -24,8 +24,21 @@ header{
     grid-template-columns: repeat(2, 1fr);
 }
 
-.quadrinhosJS {
+.quadrinhosPortuguesJS {
     background-color: rgb(86, 122, 170);
+    width: 270px;
+    height: 70px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 100px;
+    box-shadow: 5px 5px 3px rgb(2, 39, 10);
+}
+
+.quadrinhosInglesJS {
+    background-color: rgb(158, 188, 228);
     width: 270px;
     height: 70px;
     margin: 10px;
