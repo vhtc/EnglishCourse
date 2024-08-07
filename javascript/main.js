@@ -1,10 +1,5 @@
 let palavras = [
     {
-        id: 0,
-        english: "Dinning",
-        portuguese: "Jantando"
-    },
-    {
         id: 1,
         english: "Miss / Ms / Mrs",
         portuguese: "Senhorita, Senhora sem saber, Senhora casada"
@@ -46,8 +41,8 @@ let palavras = [
     },
     {
         id: 9,
-        english: "Tea",
-        portuguese: "Chá"
+        english: "Dinning",
+        portuguese: "Jantando"
     },
     {
         id: 10,
@@ -195,6 +190,11 @@ let palavras = [
         portuguese: "Caixas de som"
     },
     {
+        id: 39,
+        english: "Tall",
+        portuguese: "Alto"
+    },
+    {
         id: 40,
         english: "Living room",
         portuguese: "Sala de estar"
@@ -216,8 +216,8 @@ let palavras = [
     },
     {
         id: 44,
-        english: "Floor",
-        portuguese: "Chão"
+        english: "Tea",
+        portuguese: "Chá"
     },
     {
         id: 45,
@@ -263,6 +263,241 @@ let palavras = [
         id: 53,
         english: "Fans",
         portuguese: "Ventiladores"
+    },
+    {
+        id: 54,
+        english: "Have",
+        portuguese: "Ter"
+    },
+    {
+        id: 55,
+        english: "Today",
+        portuguese: "Hoje"
+    },
+    {
+        id: 56,
+        english: "Ending",
+        portuguese: "Fim"
+    },
+    {
+        id: 57,
+        english: "Dish",
+        portuguese: "Prato"
+    },
+    {
+        id: 58,
+        english: "Want",
+        portuguese: "Querer"
+    },
+    {
+        id: 59,
+        english: "Tour",
+        portuguese: "Tour ou Excursão"  // or "Excursão", depending on the context
+    },
+    {
+        id: 60,
+        english: "Small",
+        portuguese: "Pequeno"
+    },
+    {
+        id: 61,
+        english: "Wardrobe",
+        portuguese: "Guarda-roupa"
+    },
+    {
+        id: 62,
+        english: "Pillow",
+        portuguese: "Travesseiro"
+    },
+    {
+        id: 63,
+        english: "Blanket",
+        portuguese: "Cobertor"
+    },
+    {
+        id: 64,
+        english: "Listen",
+        portuguese: "Ouvir"
+    },
+    {
+        id: 65,
+        english: "Also",
+        portuguese: "Também"
+    },
+    {
+        id: 66,
+        english: "Sweet",
+        portuguese: "Doce"
+    },
+    {
+        id: 67,
+        english: "Couch",
+        portuguese: "Sofá"
+    },
+    {
+        id: 68,
+        english: "Armchair",
+        portuguese: "Poltrona"
+    },
+    {
+        id: 69,
+        english: "What else?",
+        portuguese: "O que mais?"
+    },
+    {
+        id: 70,
+        english: "Shower",
+        portuguese: "Chuveiro"
+    },
+    {
+        id: 71,
+        english: "Sink",
+        portuguese: "Pia"
+    },
+    {
+        id: 72,
+        english: "Mirror",
+        portuguese: "Espelho"
+    },
+    {
+        id: 73,
+        english: "Towels",
+        portuguese: "Toalhas"
+    },
+    {
+        id: 74,
+        english: "Backyard",
+        portuguese: "Quintal"
+    },
+    {
+        id: 75,
+        english: "Bucket",
+        portuguese: "Balde"
+    },
+    {
+        id: 76,
+        english: "Broom",
+        portuguese: "Vassoura"
+    },
+    {
+        id: 77,
+        english: "Laundry detergent",
+        portuguese: "Detergente para roupas"
+    },
+    {
+        id: 78,
+        english: "Washing machine",
+        portuguese: "Máquina de lavar"
+    },
+    {
+        id: 79,
+        english: "Pretty normal",
+        portuguese: "Bastante normal"
+    },
+    {
+        id: 80,
+        english: "Refrigerator",
+        portuguese: "Geladeira"
+    },
+    {
+        id: 81,
+        english: "Dishwasher",
+        portuguese: "Máquina de lavar louça"
+    },
+    {
+        id: 82,
+        english: "Taps",
+        portuguese: "Torneiras"
+    },
+    {
+        id: 83,
+        english: "Doorbell",
+        portuguese: "Campainha"
+    },
+    {
+        id: 84,
+        english: "Porch",
+        portuguese: "Varanda"
+    },
+    {
+        id: 85,
+        english: "Front porch",
+        portuguese: "Varanda da frente"
+    },
+    {
+        id: 86,
+        english: "Driveway",
+        portuguese: "Caminho de entrada"
+    },
+    {
+        id: 87,
+        english: "Mailbox",
+        portuguese: "Caixa de correio"
+    },
+    {
+        id: 88,
+        english: "Fence",
+        portuguese: "Cerca"
+    },
+    {
+        id: 89,
+        english: "Frontyard",
+        portuguese: "Jardim da frente"
+    },
+    {
+        id: 90,
+        english: "Doorknob",
+        portuguese: "Maçaneta"
+    },
+    {
+        id: 91,
+        english: "Attic",
+        portuguese: "Sótão"
+    },
+    {
+        id: 92,
+        english: "Bookshelf",
+        portuguese: "Estante"
+    },
+    {
+        id: 93,
+        english: "Ceiling",
+        portuguese: "Teto"
+    },
+    {
+        id: 94,
+        english: "Wall",
+        portuguese: "Parede"
+    },
+    {
+        id: 95,
+        english: "Floor",
+        portuguese: "Chão"
+    },
+    {
+        id: 96,
+        english: "Basement",
+        portuguese: "Porão"
+    },
+    {
+        id: 97,
+        english: "Two-story house",
+        portuguese: "Casa de dois andares"
+    },
+    {
+        id: 98,
+        english: "Garden",
+        portuguese: "Jardim"
+    },
+    {
+        id: 99,
+        english: "Low",
+        portuguese: "Baixo"
+    },
+    {
+        id: 100,
+        english: "Swimming pool",
+        portuguese: "Piscina"
     }
 ]
 
