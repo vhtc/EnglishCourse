@@ -16,8 +16,8 @@ let palavras = [
     },
     {
         id: 4,
-        english: "Cans",
-        portuguese: "Latas"
+        english: "Cans coke",
+        portuguese: "Latas de Coca"
     },
     {
         id: 5,
@@ -108,7 +108,198 @@ let palavras = [
         id: 22,
         english: "Painter",
         portuguese: "Pintor"
-    }  
+    },
+    {
+        id: 23,
+        english: "Tell",
+        portuguese: "Contar"
+    },
+    {
+        id: 24,
+        english: "Toothbrush",
+        portuguese: "Escova de dente"
+    },
+    {
+        id: 25,
+        english: "And of course",
+        portuguese: "E, claro"
+    },
+    {
+        id: 26,
+        english: "Toothpaste",
+        portuguese: "Creme dental"
+    },
+    {
+        id: 27,
+        english: "It looks dirty",
+        portuguese: "Parece sujo"
+    },
+    {
+        id: 28,
+        english: "Cleaning supplies",
+        portuguese: "Materiais de limpeza"
+    },
+    {
+        id: 29,
+        english: "Stove",
+        portuguese: "Fogão"
+    },
+    {
+        id: 30,
+        english: "Microwave oven",
+        portuguese: "Micro-ondas"
+    },
+    {
+        id: 31,
+        english: "Cupboard",
+        portuguese: "Armário"
+    },
+    {
+        id: 32,
+        english: "Exhaust fan",
+        portuguese: "Ventilador de exaustão"
+    },
+    {
+        id: 33,
+        english: "Smell",
+        portuguese: "Cheiro"
+    },
+    {
+        id: 34,
+        english: "Warm",
+        portuguese: "Quente"
+    },
+    {
+        id: 35,
+        english: "Roomy",
+        portuguese: "Espaçoso"
+    },
+    {
+        id: 36,
+        english: "Moon",
+        portuguese: "Lua"
+    },
+    {
+        id: 37,
+        english: "Nouns",
+        portuguese: "Substantivos"
+    },
+    {
+        id: 38,
+        english: "Can (I Can)",
+        portuguese: "Poder" // (no sentido de capacidade; para "lata", a tradução seria "Lata")
+    },
+    {
+        id: 39,
+        english: "On",
+        portuguese: "Em"
+    },
+    {
+        id: 40,
+        english: "In",
+        portuguese: "Dentro"
+    },
+    {
+        id: 41,
+        english: "Next to",
+        portuguese: "Ao lado de"
+    },
+    {
+        id: 42,
+        english: "Under",
+        portuguese: "Debaixo de"
+    },
+    {
+        id: 43,
+        english: "Over",
+        portuguese: "Acima de"
+    },
+    {
+        id: 44,
+        english: "Hear",
+        portuguese: "Ouvir"
+    },
+    {
+        id: 45,
+        english: "Job",
+        portuguese: "Emprego"
+    },
+    {
+        id: 46,
+        english: "Civil servant",
+        portuguese: "Servidor público"
+    },
+    {
+        id: 47,
+        english: "Government",
+        portuguese: "Governo"
+    },
+    {
+        id: 48,
+        english: "Work out",
+        portuguese: "Malhar / 'Resolver problemas'" // (no contexto de exercícios; "resolver" no contexto de solucionar problemas)
+    },
+    {
+        id: 49,
+        english: "Breakfast",
+        portuguese: "Café da manhã"
+    },
+    {
+        id: 50,
+        english: "Lunch",
+        portuguese: "Almoço"
+    },
+    {
+        id: 51,
+        english: "Homemaker",
+        portuguese: "Dona de casa"
+    },
+    {
+        id: 52,
+        english: "Judge",
+        portuguese: "Juiz"
+    },
+    {
+        id: 53,
+        english: "Criminals",
+        portuguese: "Criminosos"
+    },
+    {
+        id: 54,
+        english: "See you later",
+        portuguese: "Até mais"
+    },
+    {
+        id: 55,
+        english: "Mars",
+        portuguese: "Marte"
+    },
+    {
+        id: 56,
+        english: "Chimney",
+        portuguese: "Chaminé"
+    },
+    {
+        id: 57,
+        english: "Tonight",
+        portuguese: "Esta noite"
+    },
+    {
+        id: 58,
+        english: "Child",
+        portuguese: "Criança"
+    },
+    {
+        id: 59,
+        english: "Aunt",
+        portuguese: "Tia"
+    },
+    {
+        id: 60,
+        english: "Uncle",
+        portuguese: "Tio"
+    }
+
 ]
 
 function executar() {
