@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Traduções</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .word {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .translation {
+            display: none;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Traduções</h1>
+    <ul id="translationList"></ul>
+
+    <script>
+        // Array com palavras e traduções
+        let palavras = [
+            { english: "roommate", portuguese: "colega de quarto" },
+            { english: "been", portuguese: "sido/estado" },
+            { english: "great", portuguese: "ótimo" },
+            { english: "gotta go", portuguese: "tenho que ir" },
+            { english: "see ya", portuguese: "até mais" },
+            { english: "napkin", portuguese: "guardanapo" },
+            { english: "net", portuguese: "rede" },
+            { english: "note", portuguese: "nota (pode ser um bilhete ou uma anotação)" },
+            { english: "sat", portuguese: "sentei/sentou (passado de 'sit')" },
+            { english: "bat", portuguese: "morcego (ou bastão, dependendo do contexto)" },
+            { english: "mat", portuguese: "tapete" },
+            { english: "athletic scholarship", portuguese: "bolsa atlética" },
+            { english: "meet", portuguese: "encontrar/encontrar-se" },
+            { english: "after that", portuguese: "depois disso" },
+            { english: "miss", portuguese: "faltar (por exemplo, faltar ao jantar)" },
+            { english: "i get", portuguese: "eu pego/entendo" },
+            { english: "i go", portuguese: "eu vou" },
+            { english: "vacation", portuguese: "férias" },
+            { english: "around six pm", portuguese: "por volta das seis da tarde" },
+            { english: "Dorm", portuguese: "Dormitório" },
+            { english: "chase", portuguese: "perseguir" },
+            { english: "roll", portuguese: "rolar" },
+            { english: "booster", portuguese: "reforço" },
+            { english: "sting", portuguese: "picada" },
+            { english: "crawl", portuguese: "engatinhar" },
+            { english: "eagle", portuguese: "águia" },
+            { english: "shelf", portuguese: "prateleira" },
+            { english: "backpack", portuguese: "mochila" },
+            { english: "slow", portuguese: "lento" },
+            { english: "land", portuguese: "terra" },
+            { english: "cow", portuguese: "vaca" },
+            { english: "tail", portuguese: "cauda" },
+            { english: "mane", portuguese: "juba" },
+            { english: "grass", portuguese: "grama" },
+            { english: "feet", portuguese: "pés" },
+            { english: "spike", portuguese: "espinho" },
+            { english: "its back", portuguese: "suas costas" },
+            { english: "meat", portuguese: "carne" },
+            { english: "late", portuguese: "atrasado" },
+            { english: "feed", portuguese: "alimentar" },
+            { english: "fat", portuguese: "gordura" },
+            { english: "heavy", portuguese: "pesado" },
+            { english: "gives", portuguese: "dá" },
+            { english: "need", portuguese: "precisar" },
+            { english: "necks", portuguese: "pescoços" },
+            { english: "reach", portuguese: "alcançar" },
+            { english: "leaves", portuguese: "folhas" },
+            { english: "turn to eat", portuguese: "Vez de comer" },
+            { english: "rest", portuguese: "descanso" },
+            { english: "did know", portuguese: "sabia passado" },
+            { english: "knew", portuguese: "sabia futuro" },
+            { english: "way", portuguese: "caminho" },
+            { english: "own", portuguese: "próprio" },
+            { english: "that's why", portuguese: "é por isso que" },
+            { english: "they're so", portuguese: "eles são tão" },
+            { english: "naps", portuguese: "sonecas" },
+            { english: "stay", portuguese: "ficar" },
+            { english: "awake", portuguese: "acordado" },
+            { english: "field", portuguese: "campo" },
+            { english: "field trip", portuguese: "excursão" },
+            { english: "already", portuguese: "já" },
+            { english: "over", portuguese: "acabado" },
+            { english: "sharp", portuguese: "afiado" },
+            { english: "time to end", portuguese: "hora de terminar" },
+            { english: "coming", portuguese: "vindo" },
+            { english: "some back again", portuguese: "alguns voltam novamente" },
+            { english: "sheep", portuguese: "ovelha" },
+            { english: "gather around", portuguese: "reúnam-se" },
+            { english: "almost time", portuguese: "quase na hora" },
+            { english: "weird", portuguese: "estranho" },
+            { english: "around", portuguese: "ao redor" },
+            { english: "climb", portuguese: "subir" },
+            { english: "dives", portuguese: "mergulhos" },
+            { english: "away", portuguese: "longe" },
+            { english: "talk to each other", portuguese: "conversar entre si" },
+            { english: "city hall", portuguese: "prefeitura" },
+            { english: "watch out", portuguese: "cuidado" },
+            { english: "on him", portuguese: "nele" },
+            { english: "steps", portuguese: "passos" },
+            { english: "nobody", portuguese: "ninguém" },
+            { english: "meet", portuguese: "encontrar/encontrar-se" },
+            { english: "quote", portuguese: "citação" },
+            { english: "beware", portuguese: "cuidado" },
+            { english: "dangerous", portuguese: "perigoso" },
+            { english: "nothing", portuguese: "nada" },
+            { english: "worry", portuguese: "preocupar-se" },
+            { english: "breathe", portuguese: "respirar" },
+            { english: "whole", portuguese: "inteiro" },
+            { english: "line", portuguese: "linha" },
+            { english: "a lot of", portuguese: "muito" }
+        ];
+
+        // Função para gerar a lista de palavras e traduções
+        function generateList() {
+            const listElement = document.getElementById('translationList');
+            palavras.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span class="word" onclick="showTranslation('translation${index}')">${item.english}</span>
+                    <span id="translation${index}" class="translation"> - ${item.portuguese}</span>
+                `;
+                listElement.appendChild(listItem);
+            });
+        }
+
+        // Função para mostrar/ocultar a tradução
+        function showTranslation(id) {
+            const translation = document.getElementById(id);
+            translation.style.display = (translation.style.display === 'none') ? 'inline' : 'none';
+        }
+
+        // Gera a lista quando a página carrega
+        window.onload = generateList;
+    </script>
+</body>
+
+</html>
