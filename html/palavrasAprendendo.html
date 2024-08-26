@@ -183,7 +183,28 @@
             { english: "maybe", portuguese: "talvez" }
         ];
 
+        // function contarPalavras() {
+        //     palavras.forEach(elemento => {
+        //         console.log(elemento)
+        //     });
+        // }
+
+        // function gerarLista() {
+        //     let listaPalavras = getElementById('listaTraducao')
+        //     palavras.forEach((elemento) => {
+        //         console.log(elemento)
+        //         listaPalavras.innerHTML = `
+        //         <li>
+        //             <span class="word" onclick="showTranslation('translation${index}')">${item.english}</span>
+        //             <span id="translation${index}" class="translation"> - ${item.portuguese}</span>
+        //         </li>`
+        //     });
+
+
+        // }
+
         // Função para gerar a lista de palavras e traduções
+        
         function generateList() {
             const listElement = document.getElementById('translationList');
             palavras.forEach((item, index) => {
