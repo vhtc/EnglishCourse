@@ -431,6 +431,18 @@
         {
             "english": "mug",
             "portuguese": "caneca"
+        },
+        {
+            "english": "Drawer",
+            "portuguese": "Gaveta"
+        },
+        {
+            "english": "Usually",
+            "portuguese": "Geralmente"
+        },
+        {
+            "english": "Busy",
+            "portuguese": "Ocupado"
         }
     ]
 }
