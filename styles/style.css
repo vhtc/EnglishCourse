@@ -1,6 +1,7 @@
 body{
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(255, 255, 255);
     text-align: center;
+    align-items: center;
 }
 
 header{
@@ -11,41 +12,48 @@ header{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
-    width: 1250px;
+    text-align: center;
+    width: 500px;
 }
 
 #quadroPortugues {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
+    margin: auto;
 }
 
 #quadroIngles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .quadrinhosPortuguesJS {
     background-color: rgb(86, 122, 170);
-    width: 270px;
+    width: 150px;
     height: 70px;
     margin: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
     display: flex;
-    border-radius: 100px;
-    box-shadow: 5px 5px 3px rgb(158, 188, 228);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgb(158, 188, 228);
+    font-size: 15px;
+    padding-inline: 10px;
 }
 
 .quadrinhosInglesJS {
     background-color: rgb(158, 188, 228);
-    width: 270px;
+    width: 150px;
     height: 70px;
     margin: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
     display: flex;
-    border-radius: 100px;
-    box-shadow: 5px 5px 3px rgb(86, 122, 170);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgb(86, 122, 170);
+    font-size: 15px;
+    padding-inline: 10px;
 }
