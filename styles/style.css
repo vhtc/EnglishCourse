@@ -13,24 +13,24 @@ header{
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
     text-align: center;
-    width: 500px;
+    width: 400px;
 }
 
 #quadroPortugues {
-    /* display: grid; */
+    display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
     margin: auto;
 }
 
 #quadroIngles {
     margin: auto;
-    /* display: grid; */
+    display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .quadrinhosPortuguesJS {
     background-color: rgb(86, 122, 170);
-    width: 150px;
+    width: 130px;
     height: 70px;
     margin: 10px;
     align-items: center;
@@ -45,7 +45,7 @@ header{
 
 .quadrinhosInglesJS {
     background-color: rgb(158, 188, 228);
-    width: 150px;
+    width: 130px;
     height: 70px;
     margin: 10px;
     align-items: center;

@@ -17,6 +17,8 @@ window.executar = executar;
 function executar() {
     let pt = document.getElementById('quadroPortugues')
     let en = document.getElementById("quadroIngles")
+    let totalPalavras = document.getElementById('totalPalavras')
+
 
     palavras.forEach((palavra, index) => { //for das palavras 
         idPalavra = index + 1 // pode usar o palavra.id caso de algum erro
@@ -34,6 +36,8 @@ function executar() {
             palavrasVisualizadas += 1
             contadorPalavras += 1
         }
+        totalPalavras.innerHTML = `${palavrasVisualizadas} palavras de ${palavras.length}`
+
     })
 
     contadorPalavras = 0
@@ -48,6 +52,8 @@ let palavra2 = null //adicionando caracter a palavra 2
 let error = null //cont apenas para informar se existe error ou não
 
 let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
+
+let palavrasAcertadas = []
 
 window.teste = teste;
 function teste(x, y) {
@@ -75,8 +81,12 @@ function teste(x, y) {
         let vitoria2 = document.getElementById(palavra2)
         // console.log(vitoria2) //qual segunda palavra
 
-        vitoria1.style.display = "none"
-        vitoria2.style.display = "none"
+        palavrasAcertadas.push(palavra1, palavra2)
+        console.log(palavrasAcertadas)
+
+
+        // vitoria1.style.display = "none" //apagar da tela quando acertar
+        // vitoria2.style.display = "none" //apar da tela quando acertar
 
         mudarCor2 = null
         mudarCor1 = null
@@ -84,8 +94,14 @@ function teste(x, y) {
         palavra2 = null
 
         if (contador == mostrarPalavras) { //verificar se o contador de acertos está de acordo com as palavras acertadas
-            alert("Você ganhou")
+            // alert("Você ganhou")
+            console.log('Ganhou')
             contador = 0
+
+            palavrasAcertadas.forEach(element => {
+                document.getElementById(element).style.display = 'none'
+            });
+
             executar()
         }
 
