@@ -19,7 +19,6 @@ function executar() {
     let en = document.getElementById("quadroIngles")
     let totalPalavras = document.getElementById('totalPalavras')
 
-
     palavras.forEach((palavra, index) => { //for das palavras 
         idPalavra = index + 1 // pode usar o palavra.id caso de algum erro
         if (contadorPalavras < mostrarPalavras && idPalavra > palavrasVisualizadas) {
@@ -84,6 +83,8 @@ function teste(x, y) {
         palavrasAcertadas.push(palavra1, palavra2)
         console.log(palavrasAcertadas)
 
+        vitoria1.style.pointerEvents = 'none'
+        vitoria2.style.pointerEvents = 'none'
 
         // vitoria1.style.display = "none" //apagar da tela quando acertar
         // vitoria2.style.display = "none" //apar da tela quando acertar
