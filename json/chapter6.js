@@ -1,5 +1,5 @@
-{
-    "words": [
+
+    let palavras = [
         {
             "english": "order",
             "portuguese": "pedido/ordem/encomenda"
@@ -445,4 +445,3 @@
             "portuguese": "Ocupado"
         }
     ]
-}
