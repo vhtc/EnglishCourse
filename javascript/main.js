@@ -18,12 +18,18 @@ let pt = document.getElementById('quadroPortugues') //quadro portugues
 let en = document.getElementById("quadroIngles") //quadro ingles
 let palavras
 
+let palavrasAcertadas = [] //array para colocar as palavras acertadas
+let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
+
+
 window.executar = executar
 function executar() {
     let selectPalavras = document.getElementById('selectPalavras').value
 
     contadorPalavras = 0
+    contador = 0
     palavrasVisualizadas = 0
+    palavrasAcertadas = []
     idPalavra = 0
     pt.innerHTML = ''
     en.innerHTML = ''
@@ -93,9 +99,8 @@ let palavra2 = null //adicionando caracter a palavra 2
 let error = null //cont apenas para informar se existe error ou não
 let textoPalavra1, textoPalavra2
 
-let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
 
-let palavrasAcertadas = []
+
 
 window.teste = teste;
 function teste(x, y) {
