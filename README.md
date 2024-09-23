@@ -1,7 +1,5 @@
 # EnglishCourse
 
-
-atualizar para as cores continuares aparecendo agora, não precisa mais do hidden.
-atualizar para que as cores quando forem verde, ficar  block para clicar.
-atualizar css
-atualizar 
+verificar quantidade de acertos e erros
+utilizar o random para as palavras somente da tela atual
+cronometrar o tempo de estudo.
