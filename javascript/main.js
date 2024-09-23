@@ -1,22 +1,64 @@
 //     palavras.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //bagunçar as palavras em portugues
 //     palavras.sort((a, b) => a.english.localeCompare(b.english)) //bagunçar as palavras em ingles
 
+import palavrasPrincipais from "./palavras.js"
+import chapter6 from "../json/chapter6.js"
+import chapter7 from "../json/chapter7.js"
+import chapter8 from "../json/chapter8.js"
+import chapter9 from "../json/chapter9.js"
+import others from "../json/others.js"
+import learning from './palavrasAprendendo.js'
+
+
 let mostrarPalavras = 5 //quantidade de palavras para mostrar na tela
 let palavrasVisualizadas = 0 //quantidade atualizada visualizadas na tela -- NÃO MODIFICAR
 let contadorPalavras = 0 // contador de palavras mostradas na tela tem que ser igual ao mostrarPalavras -NÃO MODIFICAR
 let idPalavra = 0 //id da palavra que está sendo testada - pode ser resetada ao concluir tudo e o usuário escolher repetir as palavras
+let pt = document.getElementById('quadroPortugues') //quadro portugues
+let en = document.getElementById("quadroIngles") //quadro ingles
+let palavras
 
-import palavras from "./palavras.js"
+window.executar = executar
+function executar() {
+    let selectPalavras = document.getElementById('selectPalavras').value
 
-window.iniciar = iniciar
-function iniciar() {
-
+    contadorPalavras = 0
+    palavrasVisualizadas = 0
+    idPalavra = 0
+    pt.innerHTML = ''
+    en.innerHTML = ''
+    switch (selectPalavras) {
+        case 'main':
+            palavras = palavrasPrincipais
+            break;
+        case 'chapter6':
+            palavras = chapter6
+            break;
+        case 'chapter7':
+            palavras = chapter7
+            break;
+        case 'chapter8':
+            palavras = chapter8
+            break;
+        case 'chapter9':
+            palavras = chapter9
+            break;
+        case 'others':
+            palavras = others
+            break
+        case 'learning':
+            palavras = learning
+            break
+        default:
+            console.log('default')
+            break;
+    }
+    iniciar()
 }
 
-window.executar = executar;
-function executar() {
-    let pt = document.getElementById('quadroPortugues')
-    let en = document.getElementById("quadroIngles")
+window.iniciar = iniciar;
+function iniciar() {
+
     let totalPalavras = document.getElementById('totalPalavras')
 
     palavras.forEach((palavra, index) => { //for das palavras 
@@ -49,6 +91,7 @@ let mudarCor1 = null //verificar qual cor ira mudar
 let palavra1 = null //adicionando caracter a palavra 1
 let palavra2 = null //adicionando caracter a palavra 2
 let error = null //cont apenas para informar se existe error ou não
+let textoPalavra1, textoPalavra2
 
 let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
 
@@ -60,12 +103,14 @@ function teste(x, y) {
     let palavraHTML = document.getElementById(y)
 
     if (mudarCor1 === null) { //selecionando a palavra e colocando a cor
-        palavraHTML.style.backgroundColor = "green"
+        palavraHTML.style.backgroundColor = 'rgb(238, 153, 212)';
+        textoPalavra1 = palavraHTML
         palavra1 = y
         mudarCor1 = x
         error = false
     } else if ((mudarCor2 === null) && (palavra1 != y)) { //selecionando a segunda palavra e colocando a cor caso sejam iguais
-        palavraHTML.style.backgroundColor = "green"
+        palavraHTML.style.backgroundColor = "rgb(238, 153, 212)"
+        textoPalavra2 = palavraHTML
         palavra2 = y
         mudarCor2 = x
         error = true
@@ -73,6 +118,11 @@ function teste(x, y) {
 
     if (mudarCor1 == mudarCor2) { //se amabas as cores forem iguais a resposta esta correta
         console.log("acertou")
+        setTimeout(() => {
+            textoPalavra1.style.backgroundColor = 'rgb(164, 241, 164)'
+            textoPalavra2.style.backgroundColor = 'rgb(164, 241, 164)'
+        }, 150);
+
         contador += 1 //verificar a quantidade de acertos para dizer que ganho no final da page
         let vitoria1 = document.getElementById(palavra1)
         // console.log(vitoria1) //qual primeira palavra
@@ -99,21 +149,26 @@ function teste(x, y) {
             console.log('Ganhou')
             contador = 0
 
-            palavrasAcertadas.forEach(element => {
-                document.getElementById(element).style.display = 'none'
-            });
 
-            executar()
+            setTimeout(() => {
+                palavrasAcertadas.forEach(element => {
+                    document.getElementById(element).style.display = 'none'
+                });
+                iniciar()
+            }, 500);
         }
 
     } else if (error == 1) { //senão acertou errou, mude tudo de acordo com os erros
         console.log(error) //palavra 1
 
         let selecao1 = document.getElementById(palavra1)
-        selecao1.style.backgroundColor = "red"
-
         let selecao2 = document.getElementById(palavra2)
-        selecao2.style.backgroundColor = "red"
+
+        setTimeout(() => {
+            selecao1.style.backgroundColor = "rgb(241, 164, 174)"
+            selecao2.style.backgroundColor = "rgb(241, 164, 174)"
+        }, 200);
+
 
         mudarCor2 = null
         mudarCor1 = null

@@ -393,3 +393,5 @@ let palavras = [
       }
       
 ]
+
+export default palavras;

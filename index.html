@@ -14,6 +14,18 @@
         <h1>
             Vocabulary in English
         </h1>
+        <section id="escolhaPalavras">
+            <label for="selectPalavras">Palavras:</label>
+            <select name="selectPalavras" id="selectPalavras" onchange="executar()">
+                <option value="main">Main</option>
+                <option value="chapter6">Chapter 6</option>
+                <option value="chapter7">Chapter 7</option>
+                <option value="chapter8">Chapter 8</option>
+                <option value="chapter9">Chapter 9</option>
+                <option value="others">Others</option>
+                <option value="learning">Learning</option>
+            </select>
+        </section>
         <p id="totalPalavras"></p>
     </header>
     <main>
@@ -27,10 +39,6 @@
         </section>
     </main>
     <footer>
-        </br>
-        <button type="button" onclick="window.location.href='html/palavrasAprendendo.html'">Palavras que não
-            sei</button>
-            <button onclick="window.location.href='html/chapter8.html'">Chapter 8</button>
     </footer>
 
 </body>

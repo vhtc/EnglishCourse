@@ -1,5 +1,4 @@
-{
-    "words": [
+let palavras = [
         {
             "english": "awful",
             "portuguese": "horrível"
@@ -37,4 +36,4 @@
             "portuguese": "ideia"
         }
     ]
-}
+export default palavras
