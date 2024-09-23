@@ -241,7 +241,7 @@ let palavras = [
     },
     {
         id: 49,
-        english: "Inside",
+        english: "Inside / In",
         portuguese: "Dentro"
     },
     {
@@ -316,7 +316,7 @@ let palavras = [
     },
     {
         id: 64,
-        english: "Listen",
+        english: "Listen / Hear",
         portuguese: "Ouvir"
     },
     {
@@ -656,10 +656,6 @@ let palavras = [
         portuguese: "Em"
     },
     {
-        english: "In",
-        portuguese: "Dentro"
-    },
-    {
         english: "Next to",
         portuguese: "Ao lado de"
     },
@@ -670,10 +666,6 @@ let palavras = [
     {
         english: "Over",
         portuguese: "Acima de"
-    },
-    {
-        english: "Hear",
-        portuguese: "Ouvir"
     },
     {
         english: "Job",
