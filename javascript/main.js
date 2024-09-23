@@ -121,7 +121,7 @@ function teste(x, y) {
         setTimeout(() => {
             textoPalavra1.style.backgroundColor = 'rgb(164, 241, 164)'
             textoPalavra2.style.backgroundColor = 'rgb(164, 241, 164)'
-        }, 150);
+        }, 100);
 
         contador += 1 //verificar a quantidade de acertos para dizer que ganho no final da page
         let vitoria1 = document.getElementById(palavra1)
@@ -167,7 +167,7 @@ function teste(x, y) {
         setTimeout(() => {
             selecao1.style.backgroundColor = "rgb(241, 164, 174)"
             selecao2.style.backgroundColor = "rgb(241, 164, 174)"
-        }, 200);
+        }, 100);
 
 
         mudarCor2 = null
