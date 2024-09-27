@@ -9,7 +9,6 @@ import chapter9 from "../json/chapter9.js"
 import others from "../json/others.js"
 import learning from './palavrasAprendendo.js'
 
-
 let mostrarPalavras = 5 //quantidade de palavras para mostrar na tela
 let palavrasVisualizadas = 0 //quantidade atualizada visualizadas na tela -- NÃO MODIFICAR
 let contadorPalavras = 0 // contador de palavras mostradas na tela tem que ser igual ao mostrarPalavras -NÃO MODIFICAR
@@ -17,7 +16,12 @@ let idPalavra = 0 //id da palavra que está sendo testada - pode ser resetada ao
 let pt = document.getElementById('quadroPortugues') //quadro portugues
 let en = document.getElementById("quadroIngles") //quadro ingles
 let palavras
-
+let mudarCor2 = null //verificar qual cor da palavra 2 ira mudar
+let mudarCor1 = null //verificar qual cor ira mudar
+let palavra1 = null //adicionando caracter a palavra 1
+let palavra2 = null //adicionando caracter a palavra 2
+let error = null //cont apenas para informar se existe error ou não
+let textoPalavra1, textoPalavra2
 let palavrasAcertadas = [] //array para colocar as palavras acertadas
 let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
 
@@ -91,16 +95,6 @@ function iniciar() {
     console.log('palavras visualizadas:', palavrasVisualizadas)
     console.log(`Total de Palavras`, palavras.length)
 }
-
-let mudarCor2 = null //verificar qual cor da palavra 2 ira mudar
-let mudarCor1 = null //verificar qual cor ira mudar
-let palavra1 = null //adicionando caracter a palavra 1
-let palavra2 = null //adicionando caracter a palavra 2
-let error = null //cont apenas para informar se existe error ou não
-let textoPalavra1, textoPalavra2
-
-
-
 
 window.teste = teste;
 function teste(x, y) {
