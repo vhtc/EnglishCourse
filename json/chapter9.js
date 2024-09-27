@@ -128,7 +128,7 @@ let palavras = [
         portuguese: "camisa"
     },
     {
-        english: "jeans",
+        english: "Jeans",
         portuguese: "jeans"
     },
     {
