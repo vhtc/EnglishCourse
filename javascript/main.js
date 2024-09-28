@@ -30,6 +30,11 @@ let status = { "acertos": 0, "erros": 0 }
 
 window.executar = executar
 function executar() {
+
+    let todasPalavrasHTML = document.getElementById('todasPalavras')
+    let todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + others.length + learning.length
+    todasPalavrasHTML.innerHTML = `Total: ${todasPalavras} palavras`
+
     let selectPalavras = document.getElementById('selectPalavras').value
     atualizarStatus()
 
@@ -204,7 +209,7 @@ function teste(x, y) {
 }
 
 window.atualizarStatus = atualizarStatus;
-function atualizarStatus(){
+function atualizarStatus() {
     let statusHTML = document.getElementById('status')
     statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
 
