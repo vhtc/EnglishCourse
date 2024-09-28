@@ -24,11 +24,14 @@ let error = null //cont apenas para informar se existe error ou não
 let textoPalavra1, textoPalavra2
 let palavrasAcertadas = [] //array para colocar as palavras acertadas
 let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
+let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
+let status = { "acertos": 0, "erros": 0 }
 
 
 window.executar = executar
 function executar() {
     let selectPalavras = document.getElementById('selectPalavras').value
+    atualizarStatus()
 
     contadorPalavras = 0
     contador = 0
@@ -66,8 +69,6 @@ function executar() {
     iniciar()
 }
 
-let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
-
 window.iniciar = iniciar;
 function iniciar() {
 
@@ -89,21 +90,21 @@ function iniciar() {
             palavrasVisualizadas += 1
             contadorPalavras += 1
         }
-        
+
         totalPalavras.innerHTML = `${palavrasVisualizadas} palavras de ${palavras.length}`
     })
 
     sortPalavrasPortuguese.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //sort nas palavras em portugues
 
     sortPalavrasPortuguese.forEach((palavra) => {
-        
+
         pt.innerHTML += `
         <div id="${palavra.portuguese}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosPortuguesJS">
             ${palavra.portuguese}
         </div>`
     });
 
-    sortPalavrasPortuguese =[]
+    sortPalavrasPortuguese = []
 
     contadorPalavras = 0
     console.log('palavras visualizadas:', palavrasVisualizadas)
@@ -131,6 +132,9 @@ function teste(x, y) {
 
     if (mudarCor1 == mudarCor2) { //se amabas as cores forem iguais a resposta esta correta
         console.log("acertou")
+
+        status.acertos += 1
+
         setTimeout(() => {
             textoPalavra1.style.backgroundColor = 'rgb(164, 241, 164)'
             textoPalavra2.style.backgroundColor = 'rgb(164, 241, 164)'
@@ -172,6 +176,9 @@ function teste(x, y) {
         }
 
     } else if (error == 1) { //senão acertou errou, mude tudo de acordo com os erros
+
+        status.erros += 1
+
         console.log(error) //palavra 1
 
         let selecao1 = document.getElementById(palavra1)
@@ -193,4 +200,12 @@ function teste(x, y) {
         console.log("Errou")
 
     }
+    atualizarStatus()
+}
+
+window.atualizarStatus = atualizarStatus;
+function atualizarStatus(){
+    let statusHTML = document.getElementById('status')
+    statusHTML.innerHTML = `------------ Acertos: ${status.acertos} | Erros: ${status.erros}`
+
 }
