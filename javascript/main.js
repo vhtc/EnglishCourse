@@ -91,7 +91,7 @@ function iniciar() {
             contadorPalavras += 1
         }
 
-        totalPalavras.innerHTML = `${palavrasVisualizadas} palavras de ${palavras.length}`
+        totalPalavras.innerHTML = `Palavras visualizadas: ${palavrasVisualizadas}/${palavras.length} ..........`
     })
 
     sortPalavrasPortuguese.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //sort nas palavras em portugues
@@ -206,6 +206,6 @@ function teste(x, y) {
 window.atualizarStatus = atualizarStatus;
 function atualizarStatus(){
     let statusHTML = document.getElementById('status')
-    statusHTML.innerHTML = `------------ Acertos: ${status.acertos} | Erros: ${status.erros}`
+    statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
 
 }
