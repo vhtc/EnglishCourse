@@ -66,6 +66,8 @@ function executar() {
     iniciar()
 }
 
+let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
+
 window.iniciar = iniciar;
 function iniciar() {
 
@@ -74,10 +76,10 @@ function iniciar() {
     palavras.forEach((palavra, index) => { //for das palavras 
         idPalavra = index + 1 // pode usar o palavra.id caso de algum erro
         if (contadorPalavras < mostrarPalavras && idPalavra > palavrasVisualizadas) {
-            pt.innerHTML += `
-            <div id="${palavra.portuguese}" onclick="teste(${idPalavra}, this.id)" class="quadrinhosPortuguesJS">
-                ${palavra.portuguese}
-            </div>`
+
+            palavra.id = idPalavra //adiciona id nas palavras
+            sortPalavrasPortuguese.push(palavra)
+            // console.log(sortPalavrasPortuguese)
 
             en.innerHTML += `
             <div id="${palavra.english}" onclick="teste(${idPalavra}, this.id)" class="quadrinhosInglesJS">
@@ -87,9 +89,21 @@ function iniciar() {
             palavrasVisualizadas += 1
             contadorPalavras += 1
         }
+        
         totalPalavras.innerHTML = `${palavrasVisualizadas} palavras de ${palavras.length}`
-
     })
+
+    sortPalavrasPortuguese.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //sort nas palavras em portugues
+
+    sortPalavrasPortuguese.forEach((palavra) => {
+        
+        pt.innerHTML += `
+        <div id="${palavra.portuguese}" onclick="teste(${palavra.id}, this.id)" class="quadrinhosPortuguesJS">
+            ${palavra.portuguese}
+        </div>`
+    });
+
+    sortPalavrasPortuguese =[]
 
     contadorPalavras = 0
     console.log('palavras visualizadas:', palavrasVisualizadas)
