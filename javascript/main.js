@@ -1,6 +1,3 @@
-//     palavras.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //bagunçar as palavras em portugues
-//     palavras.sort((a, b) => a.english.localeCompare(b.english)) //bagunçar as palavras em ingles
-
 import palavrasPrincipais from "./palavras.js"
 import chapter6 from "../json/chapter6.js"
 import chapter7 from "../json/chapter7.js"
@@ -15,7 +12,7 @@ let contadorPalavras = 0 // contador de palavras mostradas na tela tem que ser i
 let idPalavra = 0 //id da palavra que está sendo testada - pode ser resetada ao concluir tudo e o usuário escolher repetir as palavras
 let pt = document.getElementById('quadroPortugues') //quadro portugues
 let en = document.getElementById("quadroIngles") //quadro ingles
-let palavras
+let palavras // verificar qual array palavras vai ser selecionado de acordo com os imports
 let mudarCor2 = null //verificar qual cor da palavra 2 ira mudar
 let mudarCor1 = null //verificar qual cor ira mudar
 let palavra1 = null //adicionando caracter a palavra 1
@@ -26,7 +23,6 @@ let palavrasAcertadas = [] //array para colocar as palavras acertadas
 let contador = 0 //contador para saber a quantidade já passada pelo acertou e tirar as palavras da tela.
 let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
 let status = { "acertos": 0, "erros": 0 }
-
 
 window.executar = executar
 function executar() {
@@ -45,6 +41,7 @@ function executar() {
     idPalavra = 0
     pt.innerHTML = ''
     en.innerHTML = ''
+
     switch (selectPalavras) {
         case 'main':
             palavras = palavrasPrincipais
