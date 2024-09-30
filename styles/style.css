@@ -10,7 +10,8 @@ header {
     margin: auto;
 }
 
-#quadrinhos { /* quadrinhos geral */
+#quadrinhos {
+    /* quadrinhos geral */
     /* background-color: rgb(238, 153, 212); */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -20,44 +21,33 @@ header {
     padding-top: 0px;
 }
 
-#quadroPortugues { /* seção em portugues */
+#quadroPortugues, #quadroIngles {
+    /* seção em portugues */
     display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
     margin: auto;
 }
 
-#quadroIngles { /* seção em ingles */
-    margin: auto;
-    display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
+.quadrinhosPortuguesJS, .quadrinhosInglesJS {
+    /* design dos quadrinhos menores */
+    width: 130px;
+    height: 70px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.429);
+    font-size: 15px;
+    padding-inline: 10px;
 }
 
-.quadrinhosPortuguesJS { /* design dos quadrinhos menores */
+.quadrinhosPortuguesJS {
     background-color: rgb(86, 122, 170);
-    width: 130px;
-    height: 70px;
-    margin: 10px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.429);
-    font-size: 15px;
-    padding-inline: 10px;
 }
 
-.quadrinhosInglesJS { /* design dos quadrinhos menores  */
+.quadrinhosInglesJS {
+    /* design dos quadrinhos menores  */
     background-color: rgb(158, 188, 228);
-    width: 130px;
-    height: 70px;
-    margin: 10px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.429);
-    font-size: 15px;
-    padding-inline: 10px;
 }
