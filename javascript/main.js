@@ -24,16 +24,35 @@ let contador = 0 //contador para saber a quantidade já passada pelo acertou e t
 let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
 let status = { "acertos": 0, "erros": 0 }
 
+
+
 window.executar = executar
 function executar() {
+    todosWindow()
+    mostrarTodasPalavras()
+    atualizarStatus()
+    reiniciarTela()
+    selecionarPalavras()
+    iniciar()
+}
 
+function todosWindow() {
+    window.selecionarPalavras = selecionarPalavras
+    window.mostrarTodasPalavras = mostrarTodasPalavras
+    window.reiniciarTela = reiniciarTela
+    window.selecionarPalavras = selecionarPalavras
+    window.iniciar = iniciar;
+    window.teste = teste;
+    window.atualizarStatus = atualizarStatus;
+}
+
+function mostrarTodasPalavras() {
     let todasPalavrasHTML = document.getElementById('todasPalavras')
     let todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + others.length + learning.length
     todasPalavrasHTML.innerHTML = `Total: ${todasPalavras} palavras`
+}
 
-    let selectPalavras = document.getElementById('selectPalavras').value
-    atualizarStatus()
-
+function reiniciarTela() {
     contadorPalavras = 0
     contador = 0
     palavrasVisualizadas = 0
@@ -41,6 +60,10 @@ function executar() {
     idPalavra = 0
     pt.innerHTML = ''
     en.innerHTML = ''
+}
+
+function selecionarPalavras() {
+    let selectPalavras = document.getElementById('selectPalavras').value
 
     switch (selectPalavras) {
         case 'main':
@@ -68,10 +91,8 @@ function executar() {
             console.log('default')
             break;
     }
-    iniciar()
 }
 
-window.iniciar = iniciar;
 function iniciar() {
 
     let totalPalavras = document.getElementById('totalPalavras')
@@ -113,7 +134,6 @@ function iniciar() {
     console.log(`Total de Palavras`, palavras.length)
 }
 
-window.teste = teste;
 function teste(x, y) {
 
     let palavraHTML = document.getElementById(y)
@@ -205,9 +225,7 @@ function teste(x, y) {
     atualizarStatus()
 }
 
-window.atualizarStatus = atualizarStatus;
 function atualizarStatus() {
     let statusHTML = document.getElementById('status')
     statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
-
 }
