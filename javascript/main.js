@@ -24,8 +24,6 @@ let contador = 0 //contador para saber a quantidade já passada pelo acertou e t
 let sortPalavrasPortuguese = [] //array para sortear as palavras em portugues
 let status = { "acertos": 0, "erros": 0 }
 
-
-
 window.executar = executar
 function executar() {
     todosWindow()
