@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgba(0, 217, 255, 0.16), rgba(53, 158, 187, 0.338));
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.16), rgba(7, 196, 248, 0.292));
     background-repeat: no-repeat;
     text-align: center;
     align-items: center;
@@ -15,6 +15,11 @@ h1 {
 header {
     text-align: center;
     margin: auto;
+}
+
+main{
+    padding-top: 5vh;
+
 }
 
 #quadrinhos {
@@ -40,7 +45,7 @@ header {
 .quadrinhosInglesJS {
     /* design dos quadrinhos menores */
     width: 130px;
-    height: 70px;
+    height: 10vh;
     margin: 10px;
     align-items: center;
     text-align: center;
