@@ -3,6 +3,7 @@ import chapter6 from "../json/chapter6.js"
 import chapter7 from "../json/chapter7.js"
 import chapter8 from "../json/chapter8.js"
 import chapter9 from "../json/chapter9.js"
+import chapter10 from "../json/chapter10.js"
 import others from "../json/others.js"
 import learning from './palavrasAprendendo.js'
 
@@ -46,7 +47,7 @@ function todosWindow() {
 
 function mostrarTodasPalavras() {
     let todasPalavrasHTML = document.getElementById('todasPalavras')
-    let todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + others.length + learning.length
+    let todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + chapter10.length + others.length + learning.length
     todasPalavrasHTML.innerHTML = `Total: ${todasPalavras} palavras`
 }
 
@@ -78,6 +79,9 @@ function selecionarPalavras() {
             break;
         case 'chapter9':
             palavras = chapter9
+            break;
+        case 'chapter10':
+            palavras = chapter10
             break;
         case 'others':
             palavras = others
