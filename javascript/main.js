@@ -43,6 +43,9 @@ function todosWindow() {
     window.iniciar = iniciar;
     window.teste = teste;
     window.atualizarStatus = atualizarStatus;
+    window.limparInicio = limparInicio;
+    window.limparCores = limparCores
+
 }
 
 function mostrarTodasPalavras() {
@@ -51,7 +54,8 @@ function mostrarTodasPalavras() {
     _todasPalavrasHTML.innerHTML = `Total: ${_todasPalavras} palavras`
 }
 
-function reiniciarTela() {    limparInicio()
+function reiniciarTela() {
+    limparInicio()
 }
 
 function selecionarPalavras() {
@@ -218,7 +222,6 @@ function atualizarStatus() {
     statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
 }
 
-window.limparInicio = limparInicio;
 function limparInicio() {
     contadorPalavras = 0
     contador = 0
@@ -229,7 +232,6 @@ function limparInicio() {
     en.innerHTML = ''
 }
 
-window.limparCores = limparCores
 function limparCores() {
     mudarCor2 = null
     mudarCor1 = null
