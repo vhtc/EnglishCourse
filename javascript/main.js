@@ -45,6 +45,7 @@ function todosWindow() {
     window.atualizarStatus = atualizarStatus;
     window.limparInicio = limparInicio;
     window.limparCores = limparCores
+    window.mudarCor = mudarCor
 
 }
 
@@ -196,22 +197,25 @@ function teste(x, y) {
     } else if (error == 1) { //senão acertou errou, mude tudo de acordo com os erros
 
         status.erros += 1
-
         console.log(error) //palavra 1
 
-        let _selecao1 = document.getElementById(palavra1)
-        let _selecao2 = document.getElementById(palavra2)
+        // let _selecao1 = document.getElementById(palavra1)
+        // let _selecao2 = document.getElementById(palavra2)
 
-        setTimeout(() => {
-            _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
-            _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
-        }, 100);
+        // setTimeout(() => {
+        //     _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
+        //     _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
+        // }, 100);
+        let _errou = true
+        mudarCor( )
 
         limparCores()
         error = false
 
         console.log(error) //palavra 2
         console.log("Errou")
+
+
 
     }
     atualizarStatus()
@@ -237,4 +241,19 @@ function limparCores() {
     mudarCor1 = null
     palavra1 = null
     palavra2 = null
+}
+
+function mudarCor(errou) {
+    let _selecao1 = document.getElementById(palavra1)
+    let _selecao2 = document.getElementById(palavra2)
+
+    if (errou == true) {
+        setTimeout(() => {
+            _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
+            _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
+        }, 100);
+
+    } else {
+
+    }
 }
