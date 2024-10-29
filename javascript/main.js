@@ -3,6 +3,7 @@ import chapter6 from "../json/chapter6.js"
 import chapter7 from "../json/chapter7.js"
 import chapter8 from "../json/chapter8.js"
 import chapter9 from "../json/chapter9.js"
+import chapter10 from "../json/chapter10.js"
 import others from "../json/others.js"
 import learning from './palavrasAprendendo.js'
 
@@ -26,14 +27,35 @@ let status = { "acertos": 0, "erros": 0 }
 
 window.executar = executar
 function executar() {
-
-    let _todasPalavrasHTML = document.getElementById('todasPalavras')
-    let _todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + others.length + learning.length
-    _todasPalavrasHTML.innerHTML = `Total: ${_todasPalavras} palavras`
-
-    let selectPalavras = document.getElementById('selectPalavras').value
+    todosWindow()
+    mostrarTodasPalavras()
     atualizarStatus()
-    limparInicio()
+    reiniciarTela()
+    selecionarPalavras()
+    iniciar()
+}
+
+function todosWindow() {
+    window.selecionarPalavras = selecionarPalavras
+    window.mostrarTodasPalavras = mostrarTodasPalavras
+    window.reiniciarTela = reiniciarTela
+    window.selecionarPalavras = selecionarPalavras
+    window.iniciar = iniciar;
+    window.teste = teste;
+    window.atualizarStatus = atualizarStatus;
+}
+
+function mostrarTodasPalavras() {
+    let _todasPalavrasHTML = document.getElementById('todasPalavras')
+    let _todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + chapter10.length + others.length + learning.length
+    _todasPalavrasHTML.innerHTML = `Total: ${_todasPalavras} palavras`
+}
+
+function reiniciarTela() {    limparInicio()
+}
+
+function selecionarPalavras() {
+    let selectPalavras = document.getElementById('selectPalavras').value
 
     switch (selectPalavras) {
         case 'main':
@@ -51,6 +73,9 @@ function executar() {
         case 'chapter9':
             palavras = chapter9
             break;
+        case 'chapter10':
+            palavras = chapter10
+            break;
         case 'others':
             palavras = others
             break
@@ -61,10 +86,8 @@ function executar() {
             console.log('default')
             break;
     }
-    iniciar()
 }
 
-window.iniciar = iniciar;
 function iniciar() {
 
     let _totalPalavras = document.getElementById('totalPalavras')
@@ -106,7 +129,6 @@ function iniciar() {
     console.log(`Total de Palavras`, palavras.length)
 }
 
-window.teste = teste;
 function teste(x, y) {
 
     let _palavraHTML = document.getElementById(y)
@@ -191,11 +213,9 @@ function teste(x, y) {
     atualizarStatus()
 }
 
-window.atualizarStatus = atualizarStatus;
 function atualizarStatus() {
     let statusHTML = document.getElementById('status')
     statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
-
 }
 
 window.limparInicio = limparInicio;
