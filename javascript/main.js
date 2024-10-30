@@ -3,6 +3,7 @@ import chapter6 from "../json/chapter6.js"
 import chapter7 from "../json/chapter7.js"
 import chapter8 from "../json/chapter8.js"
 import chapter9 from "../json/chapter9.js"
+import chapter10 from "../json/chapter10.js"
 import others from "../json/others.js"
 import learning from './palavrasAprendendo.js'
 
@@ -42,22 +43,20 @@ function todosWindow() {
     window.iniciar = iniciar;
     window.teste = teste;
     window.atualizarStatus = atualizarStatus;
+    window.limparInicio = limparInicio;
+    window.limparCores = limparCores
+    window.mudarCor = mudarCor
+
 }
 
 function mostrarTodasPalavras() {
-    let todasPalavrasHTML = document.getElementById('todasPalavras')
-    let todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + others.length + learning.length
-    todasPalavrasHTML.innerHTML = `Total: ${todasPalavras} palavras`
+    let _todasPalavrasHTML = document.getElementById('todasPalavras')
+    let _todasPalavras = palavrasPrincipais.length + chapter6.length + chapter7.length + chapter9.length + chapter10.length + others.length + learning.length
+    _todasPalavrasHTML.innerHTML = `Total: ${_todasPalavras} palavras`
 }
 
 function reiniciarTela() {
-    contadorPalavras = 0
-    contador = 0
-    palavrasVisualizadas = 0
-    palavrasAcertadas = []
-    idPalavra = 0
-    pt.innerHTML = ''
-    en.innerHTML = ''
+    limparInicio()
 }
 
 function selecionarPalavras() {
@@ -79,6 +78,9 @@ function selecionarPalavras() {
         case 'chapter9':
             palavras = chapter9
             break;
+        case 'chapter10':
+            palavras = chapter10
+            break;
         case 'others':
             palavras = others
             break
@@ -93,7 +95,7 @@ function selecionarPalavras() {
 
 function iniciar() {
 
-    let totalPalavras = document.getElementById('totalPalavras')
+    let _totalPalavras = document.getElementById('totalPalavras')
 
     palavras.forEach((palavra, index) => { //for das palavras 
         idPalavra = index + 1 // pode usar o palavra.id caso de algum erro
@@ -112,7 +114,7 @@ function iniciar() {
             contadorPalavras += 1
         }
 
-        totalPalavras.innerHTML = `Palavras visualizadas: ${palavrasVisualizadas}/${palavras.length} ..........`
+        _totalPalavras.innerHTML = `Palavras visualizadas: ${palavrasVisualizadas}/${palavras.length} ..........`
     })
 
     sortPalavrasPortuguese.sort((a, b) => a.portuguese.localeCompare(b.portuguese)) //sort nas palavras em portugues
@@ -134,17 +136,17 @@ function iniciar() {
 
 function teste(x, y) {
 
-    let palavraHTML = document.getElementById(y)
+    let _palavraHTML = document.getElementById(y)
 
     if (mudarCor1 === null) { //selecionando a palavra e colocando a cor
-        palavraHTML.style.backgroundColor = 'rgb(238, 153, 212)';
-        textoPalavra1 = palavraHTML
+        _palavraHTML.style.backgroundColor = 'rgb(238, 153, 212)';
+        textoPalavra1 = _palavraHTML
         palavra1 = y
         mudarCor1 = x
         error = false
     } else if ((mudarCor2 === null) && (palavra1 != y)) { //selecionando a segunda palavra e colocando a cor caso sejam iguais
-        palavraHTML.style.backgroundColor = "rgb(238, 153, 212)"
-        textoPalavra2 = palavraHTML
+        _palavraHTML.style.backgroundColor = "rgb(238, 153, 212)"
+        textoPalavra2 = _palavraHTML
         palavra2 = y
         mudarCor2 = x
         error = true
@@ -161,25 +163,22 @@ function teste(x, y) {
         }, 100);
 
         contador += 1 //verificar a quantidade de acertos para dizer que ganho no final da page
-        let vitoria1 = document.getElementById(palavra1)
-        // console.log(vitoria1) //qual primeira palavra
+        let _vitoria1 = document.getElementById(palavra1)
+        // console.log(_vitoria1) //qual primeira palavra
 
-        let vitoria2 = document.getElementById(palavra2)
-        // console.log(vitoria2) //qual segunda palavra
+        let _vitoria2 = document.getElementById(palavra2)
+        // console.log(_vitoria2) //qual segunda palavra
 
         palavrasAcertadas.push(palavra1, palavra2)
         console.log(palavrasAcertadas)
 
-        vitoria1.style.pointerEvents = 'none'
-        vitoria2.style.pointerEvents = 'none'
+        _vitoria1.style.pointerEvents = 'none'
+        _vitoria2.style.pointerEvents = 'none'
 
-        // vitoria1.style.display = "none" //apagar da tela quando acertar
-        // vitoria2.style.display = "none" //apar da tela quando acertar
+        // _vitoria1.style.display = "none" //apagar da tela quando acertar
+        // _vitoria2.style.display = "none" //apar da tela quando acertar
 
-        mudarCor2 = null
-        mudarCor1 = null
-        palavra1 = null
-        palavra2 = null
+        limparCores()
 
         if (contador == mostrarPalavras) { //verificar se o contador de acertos está de acordo com as palavras acertadas
             // alert("Você ganhou")
@@ -198,26 +197,25 @@ function teste(x, y) {
     } else if (error == 1) { //senão acertou errou, mude tudo de acordo com os erros
 
         status.erros += 1
-
         console.log(error) //palavra 1
 
-        let selecao1 = document.getElementById(palavra1)
-        let selecao2 = document.getElementById(palavra2)
+        // let _selecao1 = document.getElementById(palavra1)
+        // let _selecao2 = document.getElementById(palavra2)
 
-        setTimeout(() => {
-            selecao1.style.backgroundColor = "rgb(241, 164, 174)"
-            selecao2.style.backgroundColor = "rgb(241, 164, 174)"
-        }, 100);
+        // setTimeout(() => {
+        //     _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
+        //     _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
+        // }, 100);
+        let _errou = true
+        mudarCor( )
 
-
-        mudarCor2 = null
-        mudarCor1 = null
-        palavra1 = null
-        palavra2 = null
+        limparCores()
         error = false
 
         console.log(error) //palavra 2
         console.log("Errou")
+
+
 
     }
     atualizarStatus()
@@ -226,4 +224,36 @@ function teste(x, y) {
 function atualizarStatus() {
     let statusHTML = document.getElementById('status')
     statusHTML.innerHTML = `✅${status.acertos} | ❌${status.erros}`
+}
+
+function limparInicio() {
+    contadorPalavras = 0
+    contador = 0
+    palavrasVisualizadas = 0
+    palavrasAcertadas = []
+    idPalavra = 0
+    pt.innerHTML = ''
+    en.innerHTML = ''
+}
+
+function limparCores() {
+    mudarCor2 = null
+    mudarCor1 = null
+    palavra1 = null
+    palavra2 = null
+}
+
+function mudarCor(errou) {
+    let _selecao1 = document.getElementById(palavra1)
+    let _selecao2 = document.getElementById(palavra2)
+
+    if (errou == true) {
+        setTimeout(() => {
+            _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
+            _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
+        }, 100);
+
+    } else {
+
+    }
 }
