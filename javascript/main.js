@@ -46,6 +46,7 @@ function todosWindow() {
     window.limparInicio = limparInicio;
     window.limparCores = limparCores
     window.mudarCor = mudarCor
+    window.mudarTela = mudarTela
 
 }
 
@@ -135,8 +136,8 @@ function iniciar() {
 }
 
 function teste(x, y) {
-
     let _palavraHTML = document.getElementById(y)
+    let _errou
 
     if (mudarCor1 === null) { //selecionando a palavra e colocando a cor
         _palavraHTML.style.backgroundColor = 'rgb(238, 153, 212)';
@@ -155,12 +156,11 @@ function teste(x, y) {
     if (mudarCor1 == mudarCor2) { //se amabas as cores forem iguais a resposta esta correta
         console.log("acertou")
 
+        _errou = false
+
         status.acertos += 1
 
-        setTimeout(() => {
-            textoPalavra1.style.backgroundColor = 'rgb(164, 241, 164)'
-            textoPalavra2.style.backgroundColor = 'rgb(164, 241, 164)'
-        }, 100);
+        mudarCor(_errou, textoPalavra1, textoPalavra2)
 
         contador += 1 //verificar a quantidade de acertos para dizer que ganho no final da page
         let _vitoria1 = document.getElementById(palavra1)
@@ -175,23 +175,13 @@ function teste(x, y) {
         _vitoria1.style.pointerEvents = 'none'
         _vitoria2.style.pointerEvents = 'none'
 
-        // _vitoria1.style.display = "none" //apagar da tela quando acertar
-        // _vitoria2.style.display = "none" //apar da tela quando acertar
-
         limparCores()
 
         if (contador == mostrarPalavras) { //verificar se o contador de acertos está de acordo com as palavras acertadas
-            // alert("Você ganhou")
             console.log('Ganhou')
             contador = 0
 
-
-            setTimeout(() => {
-                palavrasAcertadas.forEach(element => {
-                    document.getElementById(element).style.display = 'none'
-                });
-                iniciar()
-            }, 500);
+            mudarTela()
         }
 
     } else if (error == 1) { //senão acertou errou, mude tudo de acordo com os erros
@@ -199,24 +189,12 @@ function teste(x, y) {
         status.erros += 1
         console.log(error) //palavra 1
 
-        // let _selecao1 = document.getElementById(palavra1)
-        // let _selecao2 = document.getElementById(palavra2)
-
-        // setTimeout(() => {
-        //     _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
-        //     _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
-        // }, 100);
-        let _errou = true
-        mudarCor( )
-
-        limparCores()
+        _errou = true
+        mudarCor(_errou)
         error = false
 
         console.log(error) //palavra 2
         console.log("Errou")
-
-
-
     }
     atualizarStatus()
 }
@@ -252,8 +230,21 @@ function mudarCor(errou) {
             _selecao1.style.backgroundColor = "rgb(241, 164, 174)"
             _selecao2.style.backgroundColor = "rgb(241, 164, 174)"
         }, 100);
+        limparCores()
 
     } else {
-
+        setTimeout(() => {
+            textoPalavra1.style.backgroundColor = 'rgb(164, 241, 164)'
+            textoPalavra2.style.backgroundColor = 'rgb(164, 241, 164)'
+        }, 100);
     }
+}
+
+function mudarTela() {
+    setTimeout(() => {
+        palavrasAcertadas.forEach(element => {
+            document.getElementById(element).style.display = 'none'
+        });
+        iniciar()
+    }, 500);
 }
