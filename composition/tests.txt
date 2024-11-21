@@ -2,8 +2,8 @@ CI
 
 01 - ok
 02 - ok 
-03 
-04
+03 - Falta
+04 - ok - Falta escrever composition
 05
 06
 07
